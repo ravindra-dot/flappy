@@ -11,11 +11,9 @@
     background: skyblue;
     font-family: sans-serif;
   }
-
   canvas {
     display: block;
   }
-
   #score {
     position: absolute;
     top: 20px;
@@ -119,8 +117,8 @@ const bird = {
 
 // === Pipes ===
 const pipes = [];
-const pipeWidth = 80;
-const gap = 250;
+const pipeWidth = 75;
+const gap = 240;
 let pipeSpeed = 2;
 let score = 0;
 let gameOver = false;
@@ -182,8 +180,12 @@ function updatePipes() {
   }
 
   if (pipes.length && pipes[0].x + pipeWidth < 0) pipes.shift();
-  if (frames % 250 === 0) createPipe();
+  if (frames % 270 === 0) createPipe();
 }
+  if(score == 40){
+    gameOver = true;
+  }
+  
 
 // === Ground ===
 function drawGround() {
@@ -258,4 +260,5 @@ let loaded = 0;
 </script>
 </body>
 </html>
+
 
